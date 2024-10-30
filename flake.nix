@@ -100,7 +100,6 @@
           tile38 = pkgs.tile38;
           # t-rex = pkgs.t-rex;
           
-
           # Other
           nixGLIntel = inputs'.nixgl.packages.nixGLIntel;
 
@@ -119,11 +118,11 @@
         overlays.geonix = final: prev: {
 
           # FIXME: remove overrides below
-          # gdal = prev.gdal.overrideAttrs (prev: { version = "1000"; });
-          # gdalMinimal = prev.gdal.overrideAttrs
-          #   (prev: {
-          #     useMinimalFeatures = true;
-          #   });
+          gdal = prev.gdal.overrideAttrs (prev: { version = "1000"; });
+          gdalMinimal = prev.gdal.overrideAttrs
+            (prev: {
+              useMinimalFeatures = true;
+            });
 
           # Default Python version
           python3Packages = prev.python311Packages;
